@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import clienteAxios from '../config/axios'
+import Swal from 'sweetalert2'
 
 const NuevoCliente = () => {
 
@@ -29,7 +30,24 @@ const NuevoCliente = () => {
 
                 if( res.data.code === 11000 ) {
                     console.log("Error de duplicado de mongo")
+
+                    Swal.fire({
+                        icon: "error",
+                        title: "Error al registrar",
+                        text: "Duplicidad en el registro, revise los datos",
+                        confirmButtonText: "Aceptar"
+                    })
+
+                    return false
+
                 }
+
+                Swal.fire({
+                    icon: "success",
+                    title: "Registrado",
+                    text: res.data.mensaje,
+                    confirmButtonText: "Aceptar"
+                })
             })
 
     }
