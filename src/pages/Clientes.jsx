@@ -21,8 +21,8 @@ const Clientes = () => {
     return (
         <>
             <h2>Clientes</h2>
-            <Link to="clientes/nuevo" className="btn btn-verde nvo-cliente"> <i className="fas fa-plus-circle"></i>
-                Nuevo Cliente
+            <Link to="clientes/nuevo" className="btn btn-verde nvo-cliente">
+                <i class="fa fa-plus-circle" aria-hidden="true"></i> Nuevo Cliente
             </Link>
             <ul className="listado-clientes">
                 {

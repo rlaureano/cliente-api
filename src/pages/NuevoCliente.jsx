@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import clienteAxios from '../config/axios'
 import Swal from 'sweetalert2'
+import clienteAxios from '../config/axios'
+import { useNavigate } from 'react-router-dom'
 
 const NuevoCliente = () => {
+
+    const navigate = useNavigate()
 
     const[ cliente, setCliente ] = useState({
         nombre:"",
@@ -26,7 +29,6 @@ const NuevoCliente = () => {
 
         clienteAxios.post("/clientes", cliente)
             .then( res => {
-                console.log(res)
 
                 if( res.data.code === 11000 ) {
                     console.log("Error de duplicado de mongo")
@@ -38,16 +40,23 @@ const NuevoCliente = () => {
                         confirmButtonText: "Aceptar"
                     })
 
-                    return false
+                } else {
 
+                    Swal.fire({
+                        icon: "success",
+                        title: "Registrado",
+                        text: res.data.mensaje,
+                        confirmButtonText: "Aceptar"
+                    })
+
+                    // redireccionar
+                    navigate("/")
+                    
                 }
 
-                Swal.fire({
-                    icon: "success",
-                    title: "Registrado",
-                    text: res.data.mensaje,
-                    confirmButtonText: "Aceptar"
-                })
+                
+
+                
             })
 
     }
