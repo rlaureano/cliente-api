@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import Clientes from './pages/Clientes'
 import NuevoCliente from './pages/NuevoCliente'
+import EditarCliente from './pages/EditarCliente'
 
 import Productos from './pages/Productos'
 import Pedidos from './pages/Pedidos'
@@ -21,6 +22,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Clientes/>} />
                 <Route path="/clientes/nuevo" element={<NuevoCliente/>} />
+                <Route path="/clientes/editar/:id" element={<EditarCliente/>} />
                 <Route path="/productos" element={<Productos/>} />
                 <Route path="/pedidos" element={<Pedidos/>} />
               </Routes>

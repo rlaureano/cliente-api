@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Cliente = ({cliente}) => {
 
@@ -13,12 +14,12 @@ const Cliente = ({cliente}) => {
             <p>Tel: {telefono}</p>
         </div>
         <div className="acciones">
-            <a href="#" className="btn btn-azul">
-                <i class="fa fa-pencil" aria-hidden="true"></i>
+            <Link to={`/clientes/editar/${_id}`} className="btn btn-azul">
+                <i className="fa fa-pencil" aria-hidden="true"></i>
                 Editar Cliente
-            </a>
+            </Link>
             <button type="button" className="btn btn-rojo btn-eliminar">
-                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                <i className="fa fa-trash-o" aria-hidden="true"></i>
                 Eliminar Cliente
             </button>
         </div>
