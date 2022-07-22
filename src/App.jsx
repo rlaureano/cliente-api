@@ -5,6 +5,9 @@ import NuevoCliente from './pages/NuevoCliente'
 import EditarCliente from './pages/EditarCliente'
 
 import Productos from './pages/Productos'
+import NuevoProducto from './pages/NuevoProducto'
+import EditarProducto from './pages/EditarProducto'
+
 import Pedidos from './pages/Pedidos'
 
 import Header from './components/layout/Header'
@@ -24,6 +27,8 @@ const App = () => {
                 <Route path="/clientes/nuevo" element={<NuevoCliente/>} />
                 <Route path="/clientes/editar/:id" element={<EditarCliente/>} />
                 <Route path="/productos" element={<Productos/>} />
+                <Route path="/productos/nuevo" element={<NuevoProducto/>} />
+                <Route path="/productos/editar/:id" element={<EditarProducto/>} />
                 <Route path="/pedidos" element={<Pedidos/>} />
               </Routes>
             </main>

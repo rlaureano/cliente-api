@@ -30,6 +30,7 @@ const Clientes = () => {
                         <Cliente
                             key={cliente._id}
                             cliente={cliente}
+                            consultarAPI={consultarAPI}
                         />
                     ))
                 }
