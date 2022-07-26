@@ -9,6 +9,7 @@ import NuevoProducto from './pages/NuevoProducto'
 import EditarProducto from './pages/EditarProducto'
 
 import Pedidos from './pages/Pedidos'
+import NuevoPedido from './pages/NuevoPedido'
 
 import Header from './components/layout/Header'
 import Navegacion from './components/layout/Navegacion'
@@ -30,6 +31,7 @@ const App = () => {
                 <Route path="/productos/nuevo" element={<NuevoProducto/>} />
                 <Route path="/productos/editar/:id" element={<EditarProducto/>} />
                 <Route path="/pedidos" element={<Pedidos/>} />
+                <Route path="/pedidos/nuevo/:id" element={<NuevoPedido/>} />
               </Routes>
             </main>
           </div>

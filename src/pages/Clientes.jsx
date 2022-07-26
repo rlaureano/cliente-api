@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Cliente from '../components/clientes/Cliente'
 import clienteAxios from '../config/axios'
+import Spinner from '../components/layout/Spinner'
 
 const Clientes = () => {
 
@@ -17,6 +18,8 @@ const Clientes = () => {
     useEffect(() => {
         consultarAPI() 
     },[])
+
+    if( !clientes.length ) return <Spinner/>
 
     return (
         <>

@@ -50,6 +50,11 @@ const Cliente = ({cliente,consultarAPI}) => {
                     <i className="fa fa-pencil" aria-hidden="true"></i>
                     Editar Cliente
                 </Link>
+
+                <Link to={`/pedidos/nuevo/${_id}`} className="btn btn-amarillo">
+                    <i className="fa fa-plus-circle" aria-hidden="true"></i>
+                    Nuevo Pedido
+                </Link>
                 <button 
                     type="button" 
                     className="btn btn-rojo btn-eliminar"
